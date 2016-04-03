@@ -3,6 +3,6 @@
 open Suave
 
 [<EntryPoint>]
-let main argv = 
+let main [|port; staticFileLocation|] = 
     startWebServer defaultConfig (Successful.OK "Hello World!")
     0 // return an integer exit code
