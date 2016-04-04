@@ -86,23 +86,37 @@
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"
             },
             "resources": [
-                {
-                    "name": "appsettings",
-                    "type": "config",
-                    "apiVersion": "2015-08-01",
-                    "dependsOn": [
-                        "[concat('Microsoft.Web/sites/', variables('webSiteName'))]",
-                        "[concat('Microsoft.Insights/components/', variables('appInsightsName'))]"
-                    ],
-                    "tags": {
-                        "displayName": "WebAppSettings"
-                    },
-                    "properties": {
-                      "AppInsightsKey": "[reference(concat('Microsoft.Insights/components/', variables('appInsightsName'))).InstrumentationKey]",
-                      "PROJECT": "TestSuave\\TestSuave.csproj",
-                      "clientUrl":  "[concat('http://', parameters('applicationName'), '.azurewebsites.net')]"
-                    }
+              {
+                "name": "appsettings",
+                "type": "config",
+                "apiVersion": "2015-08-01",
+                "dependsOn": [
+                  "[concat('Microsoft.Web/sites/', variables('webSiteName'))]",
+                  "[concat('Microsoft.Insights/components/', variables('appInsightsName'))]"
+                ],
+                "tags": {
+                  "displayName": "WebAppSettings"
+                },
+                "properties": {
+                  "AppInsightsKey": "[reference(concat('Microsoft.Insights/components/', variables('appInsightsName'))).InstrumentationKey]",
+                  "PROJECT": "TestSuave\\TestSuave.csproj",
+                  "clientUrl": "[concat('http://', parameters('applicationName'), '.azurewebsites.net')]"
                 }
+              },
+              {
+                "apiVersion": "2015-08-01",
+                "name": "web",
+                "type": "sourcecontrols",
+                //"location": "[resourceGroup().location]",
+                "dependsOn": [
+                  "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
+                ],
+                "properties": {
+                  "branch": "[parameters('branch')]",
+                  "IsManualIntegration": true,
+                  "RepoUrl": "[parameters('repoUrl')]"
+                }
+              }
             ]
         },
       {
@@ -120,20 +134,6 @@
         "properties": {
           "applicationId": "[variables('webSiteName')]"
         }
-      },
-      {
-        "apiVersion": "2015-04-01",
-        "name": "web",
-        "type": "sourcecontrols",
-        "location": "[resourceGroup().location]",
-        "dependsOn": [
-          "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
-        ],
-        "properties": {
-          "branch": "[parameters('branch')]",
-          "IsManualIntegration": true,
-          "RepoUrl": "[parameters('repoUrl')]"
-        }
-      }
+      }      
     ]
 }
