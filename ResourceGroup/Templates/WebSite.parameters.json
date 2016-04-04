@@ -7,8 +7,8 @@
       },
       "repoUrl": {
         "value": "https://vigarcia.visualstudio.com/DefaultCollection/_git/TestSuave"
-      }
-      "applicationName": {
+      },
+      "branch": {
             "value": "master"
         }
     }
