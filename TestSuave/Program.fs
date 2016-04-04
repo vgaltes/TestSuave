@@ -13,5 +13,5 @@ let serverConfig port =
 [<EntryPoint>]
 let main argsv = 
     let port = argsv.[0]
-    startWebServer (serverConfig port) (Successful.OK "Hello World from Suave!")
+    startWebServer (serverConfig port) (Successful.OK "Hello World from Suave redeployed!")
     0 // return an integer exit code
