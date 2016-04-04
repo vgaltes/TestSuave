@@ -7,16 +7,20 @@
         "minLength": 1,
         "maxLength": 16
       },
-      "repoUrl": {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 256
-      },
-      "branch": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 256
-        },
+      "repoURL": {
+      "type": "string",
+      "defaultValue": "https://vigarcia.visualstudio.com/DefaultCollection/_git/TestSuave.git",
+      "metadata": {
+        "description": "The URL for the GitHub repository that contains the project to deploy."
+      }
+    },
+    "branch": {
+      "type": "string",
+      "defaultValue": "master",
+      "metadata": {
+        "description": "The branch of the GitHub repository to use."
+      }
+    },
         "skuName": {
             "type": "string",
             "defaultValue": "F1",
@@ -107,7 +111,6 @@
                 "apiVersion": "2015-08-01",
                 "name": "web",
                 "type": "sourcecontrols",
-                //"location": "[resourceGroup().location]",
                 "dependsOn": [
                   "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
                 ],

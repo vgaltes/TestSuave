@@ -6,7 +6,7 @@
         "value": "testsuave"
       },
       "repoUrl": {
-        "value": "https://vigarcia.visualstudio.com/DefaultCollection/_git/TestSuave"
+        "value": "https://vigarcia.visualstudio.com/DefaultCollection/_git/TestSuave.git"
       },
       "branch": {
             "value": "master"
