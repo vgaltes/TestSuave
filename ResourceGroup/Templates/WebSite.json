@@ -9,7 +9,7 @@
       },
       "repoURL": {
       "type": "string",
-      "defaultValue": "https://vigarcia.visualstudio.com/DefaultCollection/_git/TestSuave.git",
+      "defaultValue": "https://vigarcia.visualstudio.com/DefaultCollection/_git/TestSuave",
       "metadata": {
         "description": "The URL for the GitHub repository that contains the project to deploy."
       }
