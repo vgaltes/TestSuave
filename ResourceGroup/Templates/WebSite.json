@@ -9,7 +9,7 @@
       },
       "repoURL": {
       "type": "string",
-      "defaultValue": "https://vigarcia.visualstudio.com/DefaultCollection/_git/TestSuave",
+      "defaultValue": "https://github.com/vgaltes/TestSuave.git",
       "metadata": {
         "description": "The URL for the GitHub repository that contains the project to deploy."
       }
@@ -107,17 +107,17 @@
                   "clientUrl": "[concat('http://', parameters('applicationName'), '.azurewebsites.net')]"
                 }
               },
-              {
-                "apiVersion": "2015-08-01",
-                "name": "web",
-                "type": "config",
-                "dependsOn": [
-                  "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
-                ],
-                "properties": {
-                  "scmType": "LocalGit"
-                }
-              },
+              //{
+              //  "apiVersion": "2015-08-01",
+              //  "name": "web",
+              //  "type": "config",
+              //  "dependsOn": [
+              //    "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
+              //  ],
+              //  "properties": {
+              //    "scmType": "LocalGit"
+              //  }
+              //},
               {
                 "apiVersion": "2015-08-01",
                 "name": "web",
@@ -127,7 +127,7 @@
                 ],
                 "properties": {
                   "branch": "[parameters('branch')]",
-                  //"IsManualIntegration": true,
+                  "IsManualIntegration": true,
                   "RepoUrl": "[parameters('repoUrl')]"
                 }
               }
