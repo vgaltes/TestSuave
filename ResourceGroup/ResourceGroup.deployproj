@@ -54,5 +54,14 @@
       <Visible>False</Visible>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestSuave\TestSuave.fsproj">
+      <Targets>build;package;</Targets>
+      <AdditionalProperties>
+      </AdditionalProperties>
+      <IncludeFilePath>
+      </IncludeFilePath>
+    </ProjectReference>
+  </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
