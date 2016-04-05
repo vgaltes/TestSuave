@@ -107,17 +107,6 @@
                   "clientUrl": "[concat('http://', parameters('applicationName'), '.azurewebsites.net')]"
                 }
               },
-              //{
-              //  "apiVersion": "2015-08-01",
-              //  "name": "web",
-              //  "type": "config",
-              //  "dependsOn": [
-              //    "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
-              //  ],
-              //  "properties": {
-              //    "scmType": "LocalGit"
-              //  }
-              //},
               {
                 "apiVersion": "2015-08-01",
                 "name": "web",
