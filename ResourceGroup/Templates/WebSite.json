@@ -112,12 +112,13 @@
                 "name": "web",
                 "type": "sourcecontrols",
                 "dependsOn": [
-                  "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
+                  "[concat('Microsoft.Web/sites/', variables('webSiteName'))]",
+                  "[concat('Microsoft.Web/sites/config', variables('webSiteName'), 'appsettings')]"
                 ],
                 "properties": {
+                  "RepoUrl": "[parameters('repoUrl')]",
                   "branch": "[parameters('branch')]",
-                  "IsManualIntegration": true,
-                  "RepoUrl": "[parameters('repoUrl')]"
+                  "IsManualIntegration": true
                 }
               }
             ]
