@@ -113,7 +113,7 @@
                 "type": "sourcecontrols",
                 "dependsOn": [
                   "[concat('Microsoft.Web/sites/', variables('webSiteName'))]",
-                  "[concat('Microsoft.Web/sites/config/', variables('webSiteName'), '/appsettings')]"
+                  "[concat('Microsoft.Web/sites/config/', 'appsettings')]"
                 ],
                 "properties": {
                   "RepoUrl": "[parameters('repoUrl')]",
