@@ -110,14 +110,12 @@
               {
                 "apiVersion": "2015-08-01",
                 "name": "web",
-                "type": "sourcecontrols",
+                "type": "config",
                 "dependsOn": [
                   "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
                 ],
                 "properties": {
-                  "branch": "[parameters('branch')]",
-                  "IsManualIntegration": true,
-                  "RepoUrl": "[parameters('repoUrl')]"
+                  "scmType": "LocalGit"
                 }
               }
             ]
